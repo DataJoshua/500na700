@@ -21,3 +21,11 @@ $h6_margin: 2.33em 0 !default;
 
 $background: #fff !default;
 $color: #000 !default;
+
+@mixin inter-regular {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}

@@ -1,0 +1,16 @@
+// colors
+$gradient: linear-gradient(180deg, #FB8627 0%, #F5BEF6 100%);
+$white-primary: #ffff;
+$black-primary: #0F0F17;
+
+// Font:
+$inter-medium: 500;
+$inter-semibold: 600;
+
+@mixin inter($weigth) {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $weigth;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}

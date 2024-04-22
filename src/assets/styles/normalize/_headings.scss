@@ -1,30 +1,36 @@
 @if $normalize_headings == true {
     h1 {
+        @include inter-regular;
         font-size: $h1_font_size;
         margin: $h1_margin;
     }
 
     h2 {
+        @include inter-regular;
         font-size: $h2_font_size;
         margin: $h2_margin;
     }
 
     h3 {
+        @include inter-regular;
         font-size: $h3_font_size;
         margin: $h3_margin;
     }
 
     h4 {
+        @include inter-regular;
         font-size: $h4_font_size;
         margin: $h4_margin;
     }
 
     h5 {
+        @include inter-regular;
         font-size: $h5_font_size;
         margin: $h5_margin;
     }
 
     h6 {
+        @include inter-regular;
         font-size: $h6_font_size;
         margin: $h6_margin;
     }
