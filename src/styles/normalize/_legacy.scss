@@ -1,0 +1,22 @@
+@if $legacy_support_for_ie {
+  dl,
+  menu,
+  ol,
+  ul {
+    margin: 1em 0;
+  }
+}
+
+@if $legacy_support_for_ie {
+  dd {
+    margin: 0 0 0 40px;
+  }
+}
+
+@if $legacy_support_for_ie {
+  menu,
+  ol,
+  ul {
+    padding: 0 0 0 40px;
+  }
+}
