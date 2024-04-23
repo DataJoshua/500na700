@@ -1,5 +1,6 @@
 import Button from "../components/Button";
 import Checkbox from "../components/Checkbox";
+import Input from "../components/Input";
 import MenuLink from "../components/MenuLink";
 import SimpleLink from "../components/SimpleLink";
 import Tag from "../components/Tag";
@@ -12,6 +13,7 @@ function Home() {
       <MenuLink label="helo"/>
       <Tag label="component"/>
       <Checkbox name="some"/>
+      <Input name="hello" placeholder="dasd"/>
     </div>
   </>)
 }
