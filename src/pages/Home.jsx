@@ -1,4 +1,5 @@
 import Button from "../components/Button";
+import Checkbox from "../components/Checkbox";
 import MenuLink from "../components/MenuLink";
 import SimpleLink from "../components/SimpleLink";
 import Tag from "../components/Tag";
@@ -10,6 +11,7 @@ function Home() {
       <SimpleLink label="hello" path="/dsd"/>
       <MenuLink label="helo"/>
       <Tag label="component"/>
+      <Checkbox name="some"/>
     </div>
   </>)
 }

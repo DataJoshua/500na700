@@ -1,0 +1,26 @@
+@import "../../assets/styles/variables.scss";
+
+.checkbox {
+  appearance: none;
+	outline: none;
+	content: none;	
+  width: 18px;
+  height: 18px;
+}
+
+.checkbox:before {
+  content: "\2714";
+  display: flex;
+  justify-content: center;
+  background-color: $white-primary;
+  color: transparent !important;
+  width: 18px;
+  height: 18px;
+  border-style: solid;
+  border-image: $gradient 2 / 1px;
+}
+
+.checkbox:checked:before {
+  background: $gradient;
+  color: $white-primary !important;
+}
