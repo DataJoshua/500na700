@@ -1,21 +1,25 @@
 @import "../../assets/styles/variables.scss";
 
 .menu-link {
-  display: flex;
+  display: inline-block;
   color: $white-primary;
   text-decoration: none;
-  gap: 7px;
   padding: $link-padding;
   line-height: 0;
   margin: 0 !important;
 
-  &:hover > .svg-container {
-    transform: rotate(90deg);
+  .svg-container {
+    display: flex;
+    justify-content: center;
+    transition: transform ease .5s;
   }
-}
 
-.svg-container {
-  display: flex;
-  justify-content: center;
-  transition: transform ease .5s;
+  &__wrapper{
+    display: flex;
+    gap: 7px;
+
+    &:hover > .svg-container {
+      transform: rotate(90deg);
+    }
+  }
 }

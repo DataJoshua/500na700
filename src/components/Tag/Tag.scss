@@ -1,0 +1,9 @@
+@import "../../assets/styles/variables.scss";
+
+.tag {
+  color: $white-primary;
+  border: 1px solid $white-primary;
+  border-radius: 40px;
+  padding: $tag-padding;
+  opacity: .7;
+}
