@@ -26,6 +26,6 @@
 }
 
 .btn-secondary {
-  color: $black-primary;
   @extend .btn;
+  color: $black-primary;
 }

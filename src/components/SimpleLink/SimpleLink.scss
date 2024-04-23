@@ -1,0 +1,13 @@
+@import "../../assets/styles/variables.scss";
+
+.simple-link {
+  @include inter($inter-regular);
+  text-decoration: none;
+  color: $black-primary;
+  padding: $link-padding;
+  transition: opacity ease .5s;
+}
+
+.simple-link:hover {
+  opacity: .7;
+}
