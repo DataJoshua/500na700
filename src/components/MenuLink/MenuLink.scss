@@ -3,6 +3,7 @@
 .menu-wrapper {
   display: inline-block;
   height: inherit;
+  margin: 0px 20px 0px 20px;
 
   &__show {
     display: none;
@@ -16,11 +17,6 @@
     grid-template-columns: repeat(2, auto);
     place-content: center;
     gap: 5px;
-
-    animation-name: show;
-    animation-duration: .5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
   }
 }
 
@@ -34,7 +30,6 @@
   text-decoration: none;
   padding: 0px 20px 0px 20px;
   line-height: 0;
-  margin: 0 !important;
 
   .svg-container {
     display: flex;
@@ -50,7 +45,7 @@
 
 @media (min-width: 970px) {
   .menu-link {
-    padding: 30px 20px 30px 20px;
+    padding: 30px 0px 30px 0px;
   }
   
   .menu-wrapper {
@@ -64,13 +59,4 @@
       padding: 50px;
     }
   }  
-}
-
-@keyframes show {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }

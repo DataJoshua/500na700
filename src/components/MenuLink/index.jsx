@@ -4,11 +4,9 @@ import "./MenuLink.scss";
 import { useState } from "react";
 
 function MenuLink( { label, path, children = null } ) {
-  const [isArrowActive, setIsArrowActive] = useState(false)
+  const [isArrowActive, setIsArrowActive] = useState()
 
-  const toggleArrow = () => {
-    setIsArrowActive(prev => !prev)
-  }
+  const toggleArrow = () => setIsArrowActive(prev => !prev)
 
   return ( 
     <>
