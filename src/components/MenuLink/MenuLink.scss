@@ -44,12 +44,10 @@
 
 @media (min-width: 970px) {
   .menu-link {
-    padding: 30px 0px 30px 0px;
+    padding: 30px 20px 30px 20px;
   }
-  
-  .menu-wrapper {
-    margin: 0px 20px 0px 20px;
 
+  .menu-wrapper {
     &:hover > &__show {
       background-color: $black-primary;
       position: absolute;
