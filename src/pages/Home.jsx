@@ -7,7 +7,7 @@ import Tag from "../components/Tag";
 
 function Home() {
   return ( <>
-    <div style={{background: "#000", height: "100vh"}}>
+    <div style={{background: "#fff"}}>
       <Button label="Sample" isSecondary/>
       <SimpleLink label="hello" path="/dsd"/>
       <MenuLink label="helo"/>

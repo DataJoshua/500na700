@@ -1,0 +1,86 @@
+@import "../../assets/styles/variables.scss";
+
+.nav {
+  background: $black-primary;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 50px;
+  position: relative;
+  z-index: 1000;
+  border-bottom: 1px solid $black-secondary;
+
+  &__links {
+    display: none;
+  }
+
+  &__button {
+    display: none;
+  }
+
+  .responsive {
+    display: inline-block;
+
+    &__burger {
+      position: relative;
+      z-index: 1000;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 50px 0px 50px 0px;
+      background-color: $black-primary;
+      position: absolute;
+      top: 101%;
+      width: 100%;
+      height: 70vh;
+      left: 0;
+      z-index: 100;
+      transform: translateY(-200%);
+    }
+
+    &__links {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__button {
+      margin-left: 20px;
+    }
+  }
+}
+
+@media (min-width: 970px) {
+  .nav {
+    .responsive {
+      display: none;
+    }
+
+    &__links {
+      display: inline-block;
+    }
+
+    &__button {
+      display: inline-block;
+    }
+  }
+}
+
+.appear {
+  animation-name: appear;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+@keyframes appear {
+  to {
+    transform: translateY(0);
+  }
+}

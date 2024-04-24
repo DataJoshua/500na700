@@ -1,10 +1,38 @@
 @import "../../assets/styles/variables.scss";
 
+.menu-wrapper {
+  display: inline-block;
+  height: inherit;
+
+  &__show {
+    display: none;
+  }
+
+  &:hover > &__show {
+    color: $white-primary;
+    padding: 0px 20px 0px 20px;
+    max-width: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    place-content: center;
+    gap: 5px;
+
+    animation-name: show;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+}
+
+.active {
+  transform: rotate(90deg);
+}
+
 .menu-link {
   display: inline-block;
   color: $white-primary;
   text-decoration: none;
-  padding: $link-padding;
+  padding: 0px 20px 0px 20px;
   line-height: 0;
   margin: 0 !important;
 
@@ -17,9 +45,32 @@
   &__wrapper{
     display: flex;
     gap: 7px;
+  }
+}
 
-    &:hover > .svg-container {
-      transform: rotate(90deg);
+@media (min-width: 970px) {
+  .menu-link {
+    padding: 30px 20px 30px 20px;
+  }
+  
+  .menu-wrapper {
+    &:hover > &__show {
+      background-color: $black-primary;
+      position: absolute;
+      top: 101%;
+      left: 0;
+      right: 0;
+      max-width: 100%;
+      padding: 50px;
     }
+  }  
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

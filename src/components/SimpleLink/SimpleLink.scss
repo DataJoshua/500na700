@@ -3,7 +3,7 @@
 .simple-link {
   @include inter($inter-regular);
   text-decoration: none;
-  color: $black-primary;
+  color: $white-primary;
   padding: $link-padding;
   transition: opacity ease .5s;
 }
