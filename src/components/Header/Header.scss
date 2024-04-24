@@ -79,8 +79,22 @@
   animation-iteration-count: 1;
 }
 
+.disappear {
+  @extend .appear;
+  animation-name: disappear;
+}
+
 @keyframes appear {
   to {
     transform: translateY(0);
+  }
+}
+
+@keyframes disappear {
+  from {
+    transform: translateY(0)
+  }
+  to {
+    transform: translateY(-200%);
   }
 }

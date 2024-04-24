@@ -5,13 +5,24 @@ import SimpleLink from "../SimpleLink";
 import "./Header.scss";
 import burger from "../../assets/imgs/burger.svg";
 import burgerActive from "../../assets/imgs/burger-active.svg";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function Header() {
   const [isActive, setIsActive] = useState(false)
+  const responsiveRef = useRef()
 
-  const toggleMenu = () => {
+  const toggleResponsiveBar = () => {
     setIsActive(prev => !prev)
+    const responsiveWrapper = responsiveRef.current
+
+    if(responsiveWrapper.classList.contains("appear")) {
+      responsiveWrapper.classList.remove("appear")
+      responsiveWrapper.classList.add("disappear")
+    }
+    else {
+      responsiveWrapper.classList.remove("disappear")
+      responsiveWrapper.classList.add("appear")
+    }
   }
 
   return ( 
@@ -38,12 +49,12 @@ function Header() {
         </div>
 
         <div className="responsive">
-          <div onClick={toggleMenu}>
+          <div onClick={toggleResponsiveBar}>
             { isActive ? <img className="responsive__burger" src={burgerActive} alt=""/> :
               <img className="responsive__burger" src={burger} alt=""/>}
           </div>
 
-          <div className={`responsive__wrapper ${isActive ? "appear" : ""}`}>
+          <div ref={responsiveRef} className="responsive__wrapper">
             <div className="responsive__links">
               <MenuLink label="Пункт 1" path="/">
                 <SimpleLink label="О 500на700" path="/some"/>
