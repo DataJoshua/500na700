@@ -60,6 +60,10 @@ function News() {
   ]
 
   useEffect(()=> {
+    if(window.innerWidth <= 970) {
+      setIsResponsive(true)
+    }
+
     const handleOnResize = () => {
       if(window.innerWidth <= 970) {
         setIsResponsive(true)
