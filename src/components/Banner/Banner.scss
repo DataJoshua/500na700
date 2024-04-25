@@ -30,6 +30,10 @@
     max-width: 80%;
     font-size: $h2_font_size;
   }
+
+  &__date {
+    color: $white-primary;
+  }
 }
 
 .image-container {
@@ -48,12 +52,12 @@
 .custom-splide--next,
 .custom-splide--prev {
   background: none !important;
-  top: 85% !important;
+  top: 90% !important;
 }
 
 .custom-splide--next {
   transform: rotate(180deg) !important;
-  left: 17% !important;
+  left: 18% !important;
 }
 
 .custom-splide--prev {
@@ -61,8 +65,13 @@
   left: 8% !important;
 }
 
-
 @media (min-width: 970px) {
+  .custom-splide--next,
+  .custom-splide--prev {
+    background: none !important;
+    top: 85% !important;
+  }
+
   .image-container {
     max-width: 50%;
   }

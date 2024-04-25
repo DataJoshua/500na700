@@ -1,0 +1,49 @@
+@import "../../assets/styles/variables.scss";
+
+.news {
+  background-color: $black-primary;
+  color: $white-primary;
+  padding-top: 70px;
+  border-top: 1px solid $black-secondary;
+
+  &__container{
+    padding: 30px 5% 30px 5%;
+    display: grid;
+    gap: 3.5rem 1rem;
+    grid-template-columns: repeat(3, auto);
+  }
+
+  &__title {
+    color: $white-primary;
+    margin: 20px 0px 0px 60px;
+    @include inter($inter-semibold);  
+  }
+}
+
+.element {
+  &__img {
+    width: 500px;
+    height: 300px;
+  }
+  
+  &__description {
+    opacity: .6;
+    max-width: 70%;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover > &__title{
+    background: $gradient;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@media (max-width: 1634px) {
+  .news__container {
+    grid-template-columns: repeat(2, auto);
+  }
+}
