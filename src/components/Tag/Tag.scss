@@ -1,6 +1,7 @@
 @import "../../assets/styles/variables.scss";
 
 .tag {
+  display: inline-block;
   color: $white-primary;
   border: 1px solid $white-primary;
   border-radius: 40px;

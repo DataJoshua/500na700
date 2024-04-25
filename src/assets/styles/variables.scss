@@ -1,3 +1,13 @@
+// Headings
+
+$h1_font_size: 40px !default;
+$h2_font_size: 24px !default;
+$h3_font_size: 20px !default;
+$h4_font_size: 16px !default;
+$h5_font_size: 0.83em !default;
+$h6_font_size: 0.75em !default;
+$p_font_size: 16px !default;
+
 // Button
 $button-padding: 12px 20px;
 
@@ -5,7 +15,7 @@ $button-padding: 12px 20px;
 $link-padding: 12px 20px;
 
 // Tag
-$tag-padding: 12px 20px;
+$tag-padding: 6px 15px 6px 15px;
 
 // colors
 $gradient: linear-gradient(180deg, #FB8627 0%, #F5BEF6 100%);
