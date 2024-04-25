@@ -1,0 +1,89 @@
+@import "../../assets/styles/variables.scss";
+
+.faq {
+  
+  &__container {
+    display: flex;
+    flex-direction: column;
+    background-color: $black-primary;
+  }
+
+  &__title-wrapper {
+    flex: 40%;
+  }
+
+  &__list {
+    flex: 60%;
+  }
+
+  &__title {
+    margin: 20px 0px 60px 30px; 
+    color: $white-primary;
+    @include inter($inter-semibold)
+  }
+}
+
+.faq-element {
+  padding: 30px 20px;
+  border-bottom: 1px solid $black-secondary;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  &__title {
+    font-size: $h3_font_size;
+    color: $white-primary;
+    margin: 0;
+  }
+
+  &__icon {
+    width: 18px;
+    height: 18px;
+    transition: transform ease .5s;
+  }
+
+  &__description {
+    color: $white-primary;
+    max-width: 70%;
+    display: none;
+  }
+
+  &:hover > &__container >  &__icon {
+    transform: rotate(90deg);
+  }
+
+  &:hover > &__description {
+    display: block;
+    animation-name: opa;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: .3s;
+  }
+}
+
+@keyframes opa {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 970px) {
+  .faq {
+    &__container {
+      padding: 50px;
+      flex-direction: row;
+    }
+  }
+
+  .faq-element {
+    &__title {
+      font-size: $h2_font_size;
+    }
+  }
+}
