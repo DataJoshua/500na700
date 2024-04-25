@@ -7,20 +7,22 @@ import ResponsiveNav from "./components/ResponsiveNav";
 function Header() {
   return ( 
     <>
-      <nav className="nav">
-        <div>
-          <img src={logo} alt="nav-logo" />
-        </div>
-        <div className="nav__links">
-          <LinkList/>
-        </div>
+      <div className="nav-container">
+        <nav className="nav">
+          <div>
+            <img src={logo} alt="nav-logo" />
+          </div>
+          <div className="nav__links">
+            <LinkList/>
+          </div>
 
-        <div className="nav__button">
-          <Button label="Связаться с нами"/>
-        </div>
+          <div className="nav__button">
+            <Button label="Связаться с нами"/>
+          </div>
 
-        <ResponsiveNav/>
-      </nav>
+          <ResponsiveNav/>
+        </nav>
+      </div>
     </>
   )
 }

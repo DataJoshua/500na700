@@ -5,6 +5,7 @@ import headerImg from "../assets/imgs/photo1.jpg";
 import headerImg2 from "../assets/imgs/photo2.png";
 import headerImg3 from "../assets/imgs/photo3.png";
 import { nanoid } from "nanoid";
+import Faq from "../components/Faq";
 
 function Home() {
   const data = [
@@ -34,6 +35,7 @@ function Home() {
   return ( <>
     <Banner data={data}/>
     <News/>
+    <Faq/>
   </>)
 }
 
