@@ -6,7 +6,13 @@ import arrow from "../../assets/imgs/big-arrow.svg";
 import Tag from "../Tag";
 
 function Banner({ data }) {
-  return ( 
+  const imageStyles = (img) =>  
+                      ({ background: `url(${img})`,
+                        backgroundRepeat: "no-repeat", 
+                        backgroundSize: "cover", 
+                        backgroundPosition: "center"
+                      })
+  return (
     <>
       <Splide hasTrack={ false }>
         <div className="banner">
@@ -21,8 +27,8 @@ function Banner({ data }) {
                   <p className="slide__description">{val.description}</p>
                   {val.hasOwnProperty("date") && <span className="slide__data">{val.date}</span>}
                 </div>
-                <div className="image-container">
-                  <img className="image-container__img" src={val.img} alt="" />
+                <div className="image-wrapper">
+                  <div style={imageStyles(val.img)} className="image-container"></div>
                 </div>
               </SplideSlide>
             )}
@@ -31,7 +37,7 @@ function Banner({ data }) {
           <div className="splide__arrows">
             <img src={arrow} alt="prev" className="custom-splide--prev splide__arrow splide__arrow--prev" />
             <img src={arrow} alt="next" className="custom-splide--next splide__arrow splide__arrow--next" />
-          </div>        
+          </div>
         </div>
       </Splide>
     </>

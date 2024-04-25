@@ -36,17 +36,14 @@
   }
 }
 
-.image-container {
-  width: 100%;
+.image-wrapper {
   display: flex;
   justify-content: center;
+}
 
-  &__img {
-    max-width: 670px;
-    max-height: 540px;
-    object-fit: cover;
-    overflow: hidden;
-  }
+.image-container {
+  width: 540px;
+  height: 300px;
 }
 
 .custom-splide--next,
@@ -72,10 +69,6 @@
     top: 85% !important;
   }
 
-  .image-container {
-    max-width: 50%;
-  }
-
   .banner {  
     &__tag {
       display: block;
@@ -97,7 +90,11 @@
     }
   }
 
-  
+  .image-container {
+    width: 670px;
+    height: 540px;
+  }
+
   .custom-splide--next {
     left: 9% !important;
   }
