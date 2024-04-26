@@ -4,7 +4,7 @@ import "./Header.scss";
 import LinkList from "./components/LinkList";
 import ResponsiveNav from "./components/ResponsiveNav";
 
-function Header() {
+function Header({ handleOnModal }) {
   return ( 
     <>
       <div className="nav-container">
@@ -17,10 +17,10 @@ function Header() {
           </div>
 
           <div className="nav__button">
-            <Button label="Связаться с нами"/>
+            <Button handleOnClick={handleOnModal} label="Связаться с нами"/>
           </div>
 
-          <ResponsiveNav/>
+          <ResponsiveNav handleOnModal={handleOnModal}/>
         </nav>
       </div>
     </>

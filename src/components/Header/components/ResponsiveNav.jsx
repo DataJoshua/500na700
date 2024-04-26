@@ -5,7 +5,7 @@ import burgerActive from "../../../assets/imgs/burger-active.svg";
 import Button from "../../Button";
 import { useRef, useState } from "react";
 
-function ResponsiveNav() {
+function ResponsiveNav({ handleOnModal }) {
   const [isActive, setIsActive] = useState(false)
   const responsiveRef = useRef()
 
@@ -37,7 +37,7 @@ function ResponsiveNav() {
             <LinkList/>
           </div>
           <div className="responsive__button">
-            <Button label="Связаться с нами"/>
+            <Button handleOnClick={handleOnModal} label="Связаться с нами"/>
           </div>
         </div>
       </div>

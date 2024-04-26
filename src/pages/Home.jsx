@@ -8,6 +8,7 @@ import { nanoid } from "nanoid";
 import Faq from "../components/Faq";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
+import Modal from "../components/Modal";
 
 function Home() {
   const data = [
