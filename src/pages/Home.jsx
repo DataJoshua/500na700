@@ -7,7 +7,6 @@ import headerImg3 from "../assets/imgs/photo3.png";
 import { nanoid } from "nanoid";
 import Faq from "../components/Faq";
 import ContactForm from "../components/ContactForm";
-import Footer from "../components/Footer";
 
 function Home() {
   const data = [
@@ -39,7 +38,6 @@ function Home() {
     <News/>
     <Faq/>
     <ContactForm/>
-    <Footer/>
   </>)
 }
 

@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Header from "./components/Header";
 import Modal from "./components/Modal";
+import Article from "./pages/Article";
+import Footer from "./components/Footer";
 import { useState } from "react";
 
 function App() {
@@ -17,7 +19,9 @@ function App() {
         <Modal isActive={isActiveModal} closeModal={handleOnCloseModal} />
         <Routes>
           <Route path="/" element={<Home/>}/>
+          <Route path="/news/:id" element={<Article/>}></Route>
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </>
   );

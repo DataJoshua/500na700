@@ -63,6 +63,12 @@
 
     &__title {
       margin-top: 50px;
+      justify-content: space-between;
+      padding: 0px 20px;
+    }
+
+    &__text {
+      font-size: $h2_font_size;
     }
   }
   

@@ -13,7 +13,7 @@ function Modal({ closeModal, isActive = false }) {
       <div className="modal-container">
         <div className="modal">
           <div className="modal__title">
-            <h1>Связаться с нами</h1>
+            <h1 className="modal__text">Связаться с нами</h1>
             <img onClick={closeModal} className="modal__cross" src={cross} alt="" />
           </div>
           <Input placeholder="Имя" name="name"/>
