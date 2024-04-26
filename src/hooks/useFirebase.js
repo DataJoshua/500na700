@@ -1,5 +1,4 @@
 import { initializeApp } from "firebase/app";
-import { useState } from "react";
 
 function useFirebase() {
   const app = initializeApp({
