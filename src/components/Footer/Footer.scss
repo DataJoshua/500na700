@@ -1,0 +1,55 @@
+@import "../../assets/styles/variables.scss";
+
+.footer {
+  background: $gradient;
+  display: flex;
+  padding: 40px;
+  justify-content: space-between;
+
+  img {
+    max-width: 102px;
+  }
+
+  &__logos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__links {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__data-element {
+    color: $white-primary;
+    @include inter($inter-semibold);
+  }
+}
+
+@media (max-width: 900px) {
+  .footer {
+    flex-direction: column;
+    gap: 40px;
+
+    &__logos {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__social {
+      transform: translate(-30%,-30%) scale(1.5);
+    }
+  }
+}
