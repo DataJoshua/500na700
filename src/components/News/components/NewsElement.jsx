@@ -1,6 +1,9 @@
 import "../News.scss";
+import { useNavigate } from "react-router-dom";
 
-function NewsElement({ img, title, description, date }) {
+function NewsElement({ id, img, title, description, date }) {
+  const navigate = useNavigate()
+
   const imgStyles = {
     background: `url(${img})`, 
     backgroundPosition: "center",
@@ -8,9 +11,13 @@ function NewsElement({ img, title, description, date }) {
     backgroundSize:"cover"
   }
 
+  const handleOnClick = () => {
+    navigate(`/news/${id}`)
+  }
+
   return ( 
     <>
-      <div className="element">
+      <div className="element" onClick={handleOnClick}>
         <div className="element__img" style={imgStyles}></div>
         <h2 className="element__title">{title}</h2>
         <p className="element__description">{description}</p>

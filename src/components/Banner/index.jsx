@@ -17,7 +17,7 @@ function Banner({ data }) {
       <Splide hasTrack={ false }>
         <div className="banner">
           <SplideTrack>
-            {data.map(val =>
+            {data?.map(val =>
               <SplideSlide key={val.id} className="slide">
                 <div className="slide__aside">
                   <div className="banner__tag">

@@ -1,71 +1,46 @@
 import "./News.scss";
-import news1 from "../../assets/imgs/news1.png";
-import news2 from "../../assets/imgs/news2.png";
-import news3 from "../../assets/imgs/news3.png";
-import news4 from "../../assets/imgs/news4.png";
-import news5 from "../../assets/imgs/news5.png";
-import news6 from "../../assets/imgs/news6.png";
-
-import { nanoid } from "nanoid";
+import { getDocs, collection, getFirestore } from "firebase/firestore";
+import useFirebase from "../../hooks/useFirebase";
 import NewsElement from "./components/NewsElement";
 import Banner from "../Banner";
+import { useState, useEffect } from "react";
 
 function News() {
+  const [news, setNews] = useState()
+  const app = useFirebase()
 
-  const data = [
-    {
-      id: nanoid(),
-      title: "Заголовок новости 1",
-      description: "Описание проекта Описание проекта Описание проекта Описание проекта Описание проекта Описание проекта Описание проекта Описание проекта",
-      img: news1,
-      date: "01 января 1990"
-    },
-    {
-      id: nanoid(),
-      title: "Заголовок новости 2",
-      description: "Описание проекта Описание проекта Описание проекта Описание проекта Описание проекта Описание проекта Описание проекта Описание проекта",
-      img: news2,
-      date: "01 января 1990"
-    },
-    {
-      id: nanoid(),
-      title: "Заголовок новости 3",
-      description: "Описание проекта Описание проекта Описание проекта Описание проекта Описание проекта Описание проекта Описание проекта Описание проекта",
-      img: news3,
-      date: "01 января 1990"
-    },
-    {
-      id: nanoid(),
-      title: "Заголовок новости 4",
-      description: "Описание проекта Описание проекта Описание проекта Описание проекта Описание проекта Описание проекта Описание проекта Описание проекта",
-      img: news4,
-      date: "01 января 1990"
-    },
-    {
-      id: nanoid(),
-      title: "Заголовок новости 5",
-      description: "Описание проекта Описание проекта Описание проекта Описание проекта Описание проекта Описание проекта Описание проекта Описание проекта",
-      img: news5,
-      date: "01 января 1990"
-    },
-    {
-      id: nanoid(),
-      title: "Заголовок новости 6",
-      description: "Описание проекта Описание проекта Описание проекта Описание проекта Описание проекта Описание проекта Описание проекта Описание проекта",
-      img: news6,
-      date: "01 января 1990"
-    }
-  ]
+  const toArray = (data) => {
+    const res = []
+    data.forEach(val => {
+      const id = val.id
+      const obj = val.data()
+      obj["id"] = id
+
+      res.push(obj)
+    })
+
+    res.sort((a, b) => a.order - b.order)
+
+    return res;
+  }
+
+  useEffect(()=> {
+    (async () => {
+      const data = await getDocs(collection(getFirestore(app), "news"))
+  
+      setNews(toArray(data))
+    })()
+  }, [app])
 
   return ( 
     <>
       <main className="news">
         <h1 className="news__title">НОВОСТИ</h1>
           <div className="news__small">
-            <Banner data={data}/> :
+            <Banner data={news}/> :
           </div>
           <div className="news__container">
-            {data.map(val => <NewsElement key={val.id} {...val}/>)}
+            {news?.map(val => <NewsElement key={val.id} {...val}/>)}
           </div>
       </main>
     </>
