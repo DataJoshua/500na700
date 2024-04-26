@@ -9,10 +9,8 @@ import news6 from "../../assets/imgs/news6.png";
 import { nanoid } from "nanoid";
 import NewsElement from "./components/NewsElement";
 import Banner from "../Banner";
-import { useEffect, useState } from "react";
 
 function News() {
-  const [isResponsive, setIsResponsive] = useState(false)
 
   const data = [
     {
@@ -59,35 +57,16 @@ function News() {
     }
   ]
 
-  useEffect(()=> {
-    if(window.innerWidth <= 970) {
-      setIsResponsive(true)
-    }
-
-    const handleOnResize = () => {
-      if(window.innerWidth <= 970) {
-        setIsResponsive(true)
-      }
-      else {
-        setIsResponsive(false)
-      }
-    }
-
-    const event = window.addEventListener("resize", handleOnResize)
-
-    return () =>  window.removeEventListener("resize", event)
-  },[])
-
   return ( 
     <>
       <main className="news">
         <h1 className="news__title">НОВОСТИ</h1>
-        {
-          isResponsive ? <Banner data={data}/> :
-                         <div className="news__container">
-                          {data.map(val => <NewsElement key={val.id} {...val}/>)}
-                         </div>
-        }
+          <div className="news__small">
+            <Banner data={data}/> :
+          </div>
+          <div className="news__container">
+            {data.map(val => <NewsElement key={val.id} {...val}/>)}
+          </div>
       </main>
     </>
   )

@@ -6,11 +6,12 @@
   padding-top: 70px;
   border-top: 1px solid $black-secondary;
 
-  &__container{
-    padding: 30px 5% 30px 5%;
-    display: grid;
-    gap: 3.5rem 1rem;
-    grid-template-columns: repeat(3, auto);
+  &__container {
+    display: none;
+  }
+
+  &__small{
+    display: block;
   }
 
   &__title {
@@ -51,5 +52,18 @@
 
   .news__container {
     grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media (min-width: 970px) {
+  .news__small {
+    display: none;
+  }
+
+  .news__container {
+    display: grid;
+    padding: 30px 5% 30px 5%;
+    gap: 3.5rem 1rem;
+    grid-template-columns: repeat(3, auto);
   }
 }
