@@ -15,7 +15,7 @@ function ArticleElement({ article }) {
         <main className="article__body">
           <h1 className="article__title">{article.title.toUpperCase()}</h1>
           <span className="article__date">{article.date}</span>
-          <p className="article__subtitle">{article.subtile.toUpperCase()}</p>
+          <p className="article__subtitle">{article.subtitle.toUpperCase()}</p>
           <p className="article__description">{article.description}</p>
         </main>
       </article>

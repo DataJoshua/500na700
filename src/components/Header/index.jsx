@@ -3,13 +3,16 @@ import Button from "../Button";
 import "./Header.scss";
 import LinkList from "./components/LinkList";
 import ResponsiveNav from "./components/ResponsiveNav";
+import { useNavigate } from "react-router-dom";
 
 function Header({ handleOnModal }) {
+  const navigate = useNavigate()
+
   return ( 
     <>
       <div className="nav-container">
         <nav className="nav">
-          <div>
+          <div onClick={()=> navigate("/")}>
             <img src={logo} alt="nav-logo" />
           </div>
           <div className="nav__links">

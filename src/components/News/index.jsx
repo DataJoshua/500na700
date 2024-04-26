@@ -37,7 +37,7 @@ function News() {
       <main className="news">
         <h1 className="news__title">НОВОСТИ</h1>
           <div className="news__small">
-            <Banner data={news}/> :
+            <Banner data={news} isRedirectable/> :
           </div>
           <div className="news__container">
             {news?.map(val => <NewsElement key={val.id} {...val}/>)}

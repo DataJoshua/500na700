@@ -1,24 +1,31 @@
 import "./Banner.scss";
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-
+import { useNavigate } from "react-router-dom";
 import arrow from "../../assets/imgs/big-arrow.svg";
 import Tag from "../Tag";
 
-function Banner({ data }) {
+function Banner({ data, isRedirectable = false }) {
+  const navigate = useNavigate()
   const imageStyles = (img) =>  
                       ({ background: `url(${img})`,
                         backgroundRepeat: "no-repeat", 
                         backgroundSize: "cover", 
                         backgroundPosition: "center"
                       })
+  const handleOnClick = (id) => {
+    if(isRedirectable) {
+      navigate(`/news/${id}`)
+    }
+  }
+
   return (
     <>
       <Splide hasTrack={ false }>
         <div className="banner">
           <SplideTrack>
             {data?.map(val =>
-              <SplideSlide key={val.id} className="slide">
+              <SplideSlide key={val.id} className="slide" onClick={()=> handleOnClick(val.id)}>
                 <div className="slide__aside">
                   <div className="banner__tag">
                     <Tag label={val.tag}/>
