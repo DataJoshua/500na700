@@ -1,10 +1,18 @@
 @import "../../assets/styles/variables.scss";
 
 .input {
+  box-sizing: border-box;
   background-color: $white-primary;
   color: $black-primary;
   padding: $link-padding;
   outline: none;
   border-radius: 10px;
-  border: 1px solid $black-primary;
+  border: 1px solid $black-secondary;
+  min-width: 100%;
+}
+
+@media (min-width: 970px) {
+  .input {
+    min-width: 440px;
+  }
 }

@@ -1,0 +1,65 @@
+@import "../../assets/styles/variables.scss";
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 50px 10px 30px 10px;
+
+  &__title {
+    @include inter($inter-semibold);
+    line-height: 40px;
+    max-width: 90%;
+    margin-bottom: 30px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__description {
+    display: none;
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 15px 0px 30px 10px;
+  }
+
+  &__checkbox-text {
+    margin: 0px;
+    font-size: 14px;
+    transform: translateY(20%);
+  }
+}
+
+@media (min-width: 970px) {
+  .input {
+    min-width: 440px;
+  }
+
+  .contact-form {
+    padding: 70px 60px;
+    flex-direction: row;
+
+    &__title {
+      max-width: 75%;
+      margin-bottom: 40px;
+    }
+
+    &__form {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(2, auto);
+    }
+  
+    &__description {
+      max-width: 75%;
+      display: block;
+    }
+  }
+}

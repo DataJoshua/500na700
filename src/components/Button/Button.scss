@@ -28,4 +28,5 @@
 .btn-secondary {
   @extend .btn;
   color: $black-primary;
+  background-color: $white-primary;
 }
